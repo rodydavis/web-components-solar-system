@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Solar System</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script
+      type="module"
+      src="../node_modules/@material/mwc-top-app-bar/mwc-top-app-bar.js"
+    ></script>
+    <script
+      type="module"
+      src="../node_modules/@material/mwc-icon-button/mwc-icon-button.js"
+    ></script>
+    <script
+      type="module"
+      src="../node_modules/@material/mwc-button/mwc-button.js"
+    ></script>
+    <script
+      type="module"
+      src="../node_modules/@material/mwc-list/mwc-list.js"
+    ></script>
+    <script
+      type="module"
+      src="../node_modules/@material/mwc-list/mwc-list-item.js"
+    ></script>
+
+    <!-- <script type="module" src="https://unpkg.com/dark-mode-toggle"></script> -->
+    <link rel="stylesheet" href="../style.css" />
+
+    <!-- import Material Icons from Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+
+    <!-- Import Material styles -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/material-components-web@3.2.0/dist/material-components-web.min.css"
+    />
+
+    <!-- The following libraries and polyfills are recommended to maximize browser support -->
+    <!-- NOTE: you must adjust the paths as appropriate for your project -->
+
+    <!-- 🚨 REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
+
+    <!-- 💁 OPTIONAL: Intersection Observer polyfill for better performance in Safari and IE11 -->
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+
+    <!-- 💁 OPTIONAL: Resize Observer polyfill improves resize behavior in non-Chrome browsers -->
+    <script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script>
+
+    <!-- 💁 OPTIONAL: Fullscreen polyfill is needed to fully support AR features -->
+    <script src="https://unpkg.com/fullscreen-polyfill@1.0.2/dist/fullscreen.polyfill.js"></script>
+
+    <!-- 💁 OPTIONAL: Include prismatic.js for Magic Leap support -->
+    <script src="https://unpkg.com/@magicleap/prismatic/prismatic.min.js"></script>
+
+    <!-- 💁 OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
+    <script
+      src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js"
+      defer
+    ></script>
+  </head>
+
+  <body>
+    <mwc-top-app-bar id="bar">
+      <mwc-icon-button
+        icon="arrow_back"
+        slot="navigationIcon"
+        onclick="window.history.go(-1); return false;"
+      ></mwc-icon-button>
+      <div slot="title" id="title">Solar System</div>
+      <mwc-icon-button
+        icon="info_outline"
+        slot="actionItems"
+        onclick="window.open('https://en.wikipedia.org/wiki/Sun'), 'Sun'"
+      ></mwc-icon-button>
+      <div id="content">
+       <detail-card></detail-card>
+      </div>
+      <br>
+      <br>
+    </mwc-top-app-bar>
+
+    <footer>
+      <span
+        >This project takes advantage of the
+        <a
+          href="https://github.com/GoogleWebComponents/model-viewer"
+          target="_blank"
+          >&lt;model-viewer&gt;</a
+        >
+        web component.</span
+      >
+    </footer>
+
+    <!-- 💁 Include both scripts below to support all browsers! -->
+
+    <!-- Loads <model-viewer> for modern browsers: -->
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer@v0.9.0/dist/model-viewer.js"
+    ></script>
+
+    <!-- Loads <model-viewer> for old browsers like IE11: -->
+    <script
+      nomodule
+      src="https://unpkg.com/@google/model-viewer@v0.9.0/dist/model-viewer-legacy.js"
+    ></script>
+
+    <!-- Import Material scripts -->
+    <script src="https://unpkg.com/material-components-web@3.2.0/dist/material-components-web.min.js"></script>
+
+    <!--  Import my scripts  -->
+    <script src="../components/index.js"></script>
+    <script src="../components/model-card.js"></script>
+    <script src="../components/detail-card.js"></script>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <!-- <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div> -->
+    <script src="https://button.glitch.me/button.js"></script>
+  </body>
+</html>
