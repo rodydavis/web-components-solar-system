@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Solar System</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script
+      type="module"
+      src="node_modules/@material/mwc-top-app-bar/mwc-top-app-bar.js"
+    ></script>
+    <script
+      type="module"
+      src="node_modules/@material/mwc-drawer/mwc-drawer.js"
+    ></script>
+    <script
+      type="module"
+      src="node_modules/@material/mwc-icon-button/mwc-icon-button.js"
+    ></script>
+    <script
+      type="module"
+      src="node_modules/@material/mwc-button/mwc-button.js"
+    ></script>
+    <script
+      type="module"
+      src="node_modules/@material/mwc-list/mwc-list.js"
+    ></script>
+    <script
+      type="module"
+      src="node_modules/@material/mwc-list/mwc-list-item.js"
+    ></script>
+
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+
+    <!-- <script type="module" src="https://unpkg.com/dark-mode-toggle"></script> -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- import Material Icons from Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+
+    <!-- Import Material styles -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/material-components-web@3.2.0/dist/material-components-web.min.css"
+    />
+  </head>
+
+  <body>
+    <mwc-drawer hasheader type="dismissible">
+      <span slot="title">Solar System</span>
+      <span slot="subtitle">Explore our Planets</span>
+      <div class="drawer-content">
+        <mwc-list id="menu-items">
+          <menu-item
+            title="Sun"
+            subtitle="5,000,000°C"
+            onclick="openPlanetIndex(0)"
+          ></menu-item>
+          <li divider padded role="separator"></li>
+          <menu-item
+            title="Mercury"
+            subtitle="-184°C to 465°C"
+            onclick="openPlanetIndex(1)"
+          ></menu-item>
+          <li divider padded role="separator"></li>
+          <menu-item
+            title="Venus"
+            subtitle="460°C"
+            onclick="openPlanetIndex(2)"
+          ></menu-item>
+          <li divider padded role="separator"></li>
+          <menu-item
+            title="Earth"
+            subtitle="-89.2°C to 70.7°C"
+            onclick="openPlanetIndex(3)"
+          ></menu-item>
+          <menu-item
+            title="Mars"
+            subtitle="-153°C to -55°C"
+            onclick="openPlanetIndex(4)"
+          ></menu-item>
+          <li divider padded role="separator"></li>
+          <menu-item
+            title="Jupiter"
+            subtitle="-145°C"
+            onclick="openPlanetIndex(5)"
+          ></menu-item>
+          <li divider padded role="separator"></li>
+          <menu-item
+            title="Saturn"
+            subtitle="-178°C"
+            onclick="openPlanetIndex(6)"
+          ></menu-item>
+          <li divider padded role="separator"></li>
+          <menu-item
+            title="Uranus"
+            subtitle="-224°C"
+            onclick="openPlanetIndex(7)"
+          ></menu-item>
+          <li divider padded role="separator"></li>
+          <menu-item
+            title="Neptune"
+            subtitle="-218°C"
+            onclick="openPlanetIndex(8)"
+          ></menu-item>
+          <li divider padded role="separator"></li>
+          <menu-item
+            title="Pluto"
+            subtitle="-223°C"
+            onclick="openPlanetIndex(9)"
+          ></menu-item>
+        </mwc-list>
+      </div>
+      <div slot="appContent">
+        <mwc-top-app-bar>
+          <mwc-icon-button slot="navigationIcon" icon="menu"></mwc-icon-button>
+          <div slot="title">Explore the Universe</div>
+          <mwc-icon-button
+            icon="code"
+            slot="actionItems"
+            onclick="openProject()"
+          ></mwc-icon-button>
+        </mwc-top-app-bar>
+        <div class="main-content">
+          <mwc-list id="planets">
+            <mwc-list-item twoline graphic="avatar" hasmeta>
+              <span>Sun</span>
+              <span slot="secondary">Accounts for 99.86% of the mass in the solar system</span>
+              <span slot="meta" class="material-icons">navigate_next</span>
+              <span slot="graphic" style="color:#e6e600;" class="material-icons"
+                >language</span
+              >
+            </mwc-list-item>
+            <mwc-list-item twoline graphic="avatar" hasmeta>
+              <span>Mercury</span>
+              <span slot="secondary">Closest planet to the sun</span>
+              <span slot="meta" class="material-icons">navigate_next</span>
+              <span slot="graphic" style="color:#262626;" class="material-icons"
+                >language</span
+              >
+            </mwc-list-item>
+            <mwc-list-item twoline graphic="avatar" hasmeta>
+              <span>Venus</span>
+              <span slot="secondary">Second brightest natural object in the night sky</span>
+              <span slot="meta" class="material-icons">navigate_next</span>
+              <span slot="graphic" style="color:#ff9900;" class="material-icons"
+                >language</span
+              >
+            </mwc-list-item>
+             <mwc-list-item twoline graphic="avatar" hasmeta>
+              <span>Earth</span>
+              <span slot="secondary">Only planet known to harbor life</span>
+              <span slot="meta" class="material-icons">navigate_next</span>
+              <span slot="graphic" style="color:#33cc33;" class="material-icons"
+                >language</span
+              >
+            </mwc-list-item>
+             <mwc-list-item twoline graphic="avatar" hasmeta>
+              <span>Mars</span>
+              <span slot="secondary">Often called the "Red Planet"</span>
+              <span slot="meta" class="material-icons">navigate_next</span>
+              <span slot="graphic" style="color:#cc3300;" class="material-icons"
+                >language</span
+              >
+            </mwc-list-item>
+             <mwc-list-item twoline graphic="avatar" hasmeta>
+              <span>Jupiter</span>
+              <span slot="secondary">Largest planet in the solar system</span>
+              <span slot="meta" class="material-icons">navigate_next</span>
+              <span slot="graphic" style="color:#cc9900;" class="material-icons"
+                >language</span
+              >
+            </mwc-list-item>
+            <mwc-list-item twoline graphic="avatar" hasmeta>
+              <span>Saturn</span>
+              <span slot="secondary">Least dense planet in the solar system</span>
+              <span slot="meta" class="material-icons">navigate_next</span>
+              <span slot="graphic" style="color:#996633;" class="material-icons"
+                >language</span
+              >
+            </mwc-list-item>
+            <mwc-list-item twoline graphic="avatar" hasmeta>
+              <span>Uranus</span>
+              <span slot="secondary">Called the "Ice Planet" and is the coldest planet</span>
+              <span slot="meta" class="material-icons">navigate_next</span>
+              <span slot="graphic" style="color:#80e5ff;" class="material-icons"
+                >language</span
+              >
+            </mwc-list-item>
+            <mwc-list-item twoline graphic="avatar" hasmeta>
+              <span>Neptune</span>
+              <span slot="secondary">Farthest planet from the sun</span>
+              <span slot="meta" class="material-icons">navigate_next</span>
+              <span slot="graphic" style="color:#4d4dff;" class="material-icons"
+                >language</span
+              >
+            </mwc-list-item>
+            <mwc-list-item twoline graphic="avatar" hasmeta>
+              <span>Pluto</span>
+              <span slot="secondary">Smaller than most moons</span>
+              <span slot="meta" class="material-icons">navigate_next</span>
+              <span slot="graphic" style="color:#00004d;" class="material-icons"
+                >language</span
+              >
+            </mwc-list-item>
+          </mwc-list>
+        </div>
+      </div>
+    </mwc-drawer>
+
+    <!-- 💁 Include both scripts below to support all browsers! -->
+
+    <!-- Loads <model-viewer> for modern browsers: -->
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer@v0.9.0/dist/model-viewer.js"
+    ></script>
+
+    <!-- Loads <model-viewer> for old browsers like IE11: -->
+    <script
+      nomodule
+      src="https://unpkg.com/@google/model-viewer@v0.9.0/dist/model-viewer-legacy.js"
+    ></script>
+
+    <!-- Import Material scripts -->
+    <script src="https://unpkg.com/material-components-web@3.2.0/dist/material-components-web.min.js"></script>
+
+    <!--  Import my scripts  -->
+    <script src="./components/index.js"></script>
+    <script src="./components/menu-item.js"></script>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <!-- <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div> -->
+    <script src="https://button.glitch.me/button.js"></script>
+  </body>
+</html>
